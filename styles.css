@@ -1,0 +1,171 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 100vw;
+    padding: 32px;
+    overflow-x: hidden;
+}
+
+.row {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+/* LANDING PAGE */
+
+/* NAVBAR */
+
+.nav__container {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+}
+
+.nav__link--list {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+}
+
+.nav__link {
+    margin: 0 12px;
+}
+
+.nav__link--anchor {
+    color: #212529;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.logo__container--title {
+    color: #212529;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+/* HEADER */
+
+.header__container {
+    width: 100%;
+    padding: 96px 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.header__description {
+    width: 100%;
+}
+
+.header__description--title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.header__description--form {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.header__description--input {
+    margin-top: 8px;
+    margin-bottom: 12px;
+    border: 2px solid #212529;
+}
+
+/* MOVIES */
+
+.movies__container {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.movies__description {
+    width: 100%;
+    margin-top: 32px;
+    margin-bottom: 64px;
+    justify-content: space-between;
+    flex-direction: row;
+    display: flex;
+}
+
+.movies__description--search-results {
+    align-items: center;
+    display: flex;
+    font-weight: 500;
+    font-size: 32px;
+}
+
+.movies__filter  {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.movies__filter--title {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.movies__catalog {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.movies__list {
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
+}
+
+.movie {
+    width: calc(100% / 3);
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.movie__description {
+    font-size: 18px;
+    margin: 24px 0;
+}
+
+.movie__container--picture {
+    width: 300px;
+    height: 441px;
+}
