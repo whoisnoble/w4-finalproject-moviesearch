@@ -4,6 +4,7 @@ const moviesSearchResultsEl = document.querySelector('.movies__description--sear
 const searchPageEl = document.querySelector('.movies__filter--title');
 const moviesListEl = document.querySelector('.movies__list');
 const loadingEl = document.querySelector('.fa-spinner');
+const formEl = document.querySelector('.header__description--form');
 
 // api key
 const apiKey = '314d35d9';
@@ -15,6 +16,10 @@ const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 let maxPages = 1;
 let titleSearch = null;
 let searchIndex = 1;
+
+formEl.addEventListener('submit', function(event) {
+    event.preventDefault();
+});
 
 async function onSearchChange(event) {
     const movieTitle = event.target.value;
