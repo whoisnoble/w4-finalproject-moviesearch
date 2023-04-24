@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieGuru - Find any movie with ease</title>
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+</head>
+<body>
+    <section id="landing-page">
+        <nav>
+            <div class="nav__container row">
+                <div class="logo__container">
+                    <a href="/index.html"><p class="logo__container--title">MovieGuru</p></a>
+                </div>
+                <ul class="nav__link--list">
+                    <li class="nav__link">
+                        <a href="/index.html" class="
+                            nav__link--anchor
+                        ">Home</a>
+                    </li>
+                    <li class="nav__link">
+                        <a href="/movie.html" class="
+                            nav__link--anchor
+                        ">Movie Finder</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <header>
+            <div class="header__container row">
+                <div class="header__description">
+                    <h1 class="header__description--title">
+                        Browse for a movie
+                    </h1>
+                    <h2 class="header__description--subtitle">
+                        Search for any title or word with ease, just type in words and we'll do the rest.
+                    </h2>
+                    <form action="" class="header__description--form">
+                        <input class="header__description--input" type="text" placeholder="Search by Title" onchange="onSearchChange(event)">
+                    </form>
+                    <div class="movies__container">
+                        <div class="movies__description">
+                            <p class="movies__description--search-results">
+                                Search Results:
+                            </p>
+                            <div class="movies__filter">
+                                <p class="movies__filter--title">Pages (0/0):</p>
+                                <div class="movies__btn--container">
+                                    <button class="movies__filter--button" onclick="previousPage()">Back Page</button>
+                                    <button class="movies__filter--button" onclick="nextPage()">Next Page</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movies__catalog">
+                            <div class="movies__list">
+                                <div class="movies__load--state">
+                                    <i class="fas fa-spinner movies__loading--spinner"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </section>
+</body>
+</html>

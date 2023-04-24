@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MovieGuru - Find any movie with ease</title>
+    <title>MovieGuru - Searching for movies made simple</title>
     <link rel="stylesheet" href="./styles.css">
     <script src="./app.js" defer></script>
 </head>
@@ -13,7 +13,7 @@
         <nav>
             <div class="nav__container row">
                 <div class="logo__container">
-                    <p class="logo__container--title">MovieGuru</p>
+                    <a href="/index.html"><p class="logo__container--title">MovieGuru</p></a>
                 </div>
                 <ul class="nav__link--list">
                     <li class="nav__link">
@@ -22,14 +22,9 @@
                         ">Home</a>
                     </li>
                     <li class="nav__link">
-                        <a href="#" class="
+                        <a href="/movie.html" class="
                             nav__link--anchor
                         ">Movie Finder</a>
-                    </li>
-                    <li class="nav__link">
-                        <a href="#" class="
-                            nav__link--anchor
-                        ">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -38,30 +33,17 @@
             <div class="header__container row">
                 <div class="header__description">
                     <h1 class="header__description--title">
-                        Browse for a movie
+                        Searching for movies made simple.
                     </h1>
-                    <form action="" class="header__description--form">
-                        <input class="header__description--input" type="text" placeholder="Search by Title" onchange="onSearchChange(event)">
-                    </form>
-                    <div class="movies__container">
-                        <div class="movies__description">
-                            <p class="movies__description--search-results">
-                                Search Results:
-                            </p>
-                            <div class="movies__filter">
-                                <p class="movies__filter--title">Pages (0/0):</p>
-                                <div class="movies__btn--container">
-                                    <button class="movies__filter--button" onclick="previousPage()">Back Page</button>
-                                    <button class="movies__filter--button" onclick="nextPage()">Next Page</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="movies__catalog">
-                            <div class="movies__list">
-                                
-                            </div>
-                        </div>
-                    </div>
+                    <h2 class="header__description--subtitle">
+                        Search for any title and get a long catalog of movies containing those key words.
+                    </h2>
+                    <a href="/movie.html"><button class="header__description--cta hover">Check it out!</button></a>
+                </div>
+                <div class="header__image--container">
+                    <figure class="header__image--wrapper">
+                        <img src="./assets/movie.svg" alt="Picture of People" class="header__image--picture">
+                    </figure>
                 </div>
             </div>
         </header>

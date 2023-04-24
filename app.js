@@ -1,10 +1,17 @@
 
-
+// classes
 const moviesSearchResultsEl = document.querySelector('.movies__description--search-results');
 const searchPageEl = document.querySelector('.movies__filter--title');
 const moviesListEl = document.querySelector('.movies__list');
+const loadingEl = document.querySelector('.fa-spinner');
+
+// api key
 const apiKey = '314d35d9';
 
+// add delays easily
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+
+// search variables
 let maxPages = 1;
 let titleSearch = null;
 let searchIndex = 1;
@@ -15,6 +22,7 @@ async function onSearchChange(event) {
     titleSearch = movieTitle;
     searchIndex = 1;
     maxPages = 1;
+
     // render new html
     renderMovies(movieTitle, searchIndex);
 }
@@ -48,11 +56,23 @@ async function previousPage() {
 } 
 
 async function renderMovies(movieTitle, searchPage) {
+    // remove all movies & activate load state
+    moviesListEl.innerHTML = `<div class="movies__load--state">
+        <i class="fas fa-spinner movies__loading--spinner movies__loading"></i>
+    </div>`
+    
+    // await delay(1000000);
+
+    // fetch movies
     const movies = await fetch(`https://www.omdbapi.com?apikey=${apiKey}&s=${movieTitle}&page=${searchPage}`);
     const moviesData = await movies.json();
 
+    // remove load state
+    loadingEl.classList.remove("movies__loading");
+
     if(moviesData.Response !== "True") {
-        return moviesSearchResultsEl.innerHTML = `Search Results (0):`
+        moviesSearchResultsEl.innerHTML = `Search Results (0):`
+        return searchPageEl.innerHTML = `Pages: (0/0)`
     }
 
     console.log(moviesData);
@@ -62,7 +82,7 @@ async function renderMovies(movieTitle, searchPage) {
 
     // generate new html
     moviesSearchResultsEl.innerHTML = `Search Results (${moviesData.totalResults}):`
-    searchPageEl.innerHTML = `Pages: (${searchPage}/${moviesData.totalResults})`
+    searchPageEl.innerHTML = `Pages: (${searchPage}/${Math.ceil(moviesData.totalResults/10)})`
     moviesListEl.innerHTML = moviesData.Search.map((data => movieHTML(data))).join("");
 }
 
